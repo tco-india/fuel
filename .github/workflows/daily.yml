@@ -13,16 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v5
         with:
+          enable-cache: true
           python-version: "3.12"
-          cache: "pip"
-      - run: pip install -e .
+      - run: uv sync --frozen
       - name: Scrape + merge + publish to HF
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_HUB_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python -m src.scraper --push
+        run: uv run python -m src.scraper --push
       - name: Upload artifact (debug)
         uses: actions/upload-artifact@v4
         with:

@@ -1,7 +1,7 @@
 [project]
 name = "tco-fuel-scraper"
-version = "0.1.0"
-description = "TCO India — Daily fuel price scraper (IOCL) → HF bhavabhuthi/tco-india fuel module"
+version = "0.2.0"
+description = "TCO India — Daily fuel price scraper (PPAC + IOCL/BPCL/HPCL) → HF bhavabhuthi/tco-india fuel module"
 requires-python = ">=3.12"
 license = { text = "AGPL-3.0" }
 dependencies = [
@@ -11,6 +11,8 @@ dependencies = [
     "duckdb>=1.0",
     "huggingface_hub>=0.24",
     "pydantic>=2.0",
+    "pdfplumber>=0.11",
+    "pypdf>=4.0",
 ]
 
 [project.optional-dependencies]

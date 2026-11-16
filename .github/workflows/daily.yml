@@ -22,7 +22,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HUGGINGFACE_HUB_TOKEN: ${{ secrets.HF_TOKEN }}
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: uv run python -m src.scraper --push
       - name: Upload artifact (debug)
         uses: actions/upload-artifact@v4

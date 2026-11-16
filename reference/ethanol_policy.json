@@ -1,0 +1,12 @@
+{
+  "petrol": [
+    {"effective_from": "2023-04-01", "ethanol_pct": 20, "note": "E20 rollout"},
+    {"effective_from": "2020-01-01", "ethanol_pct": 10, "note": "E10"},
+    {"effective_from": "2015-01-01", "ethanol_pct": 5, "note": "E5"},
+    {"effective_from": "2000-01-01", "ethanol_pct": 0, "note": "pre-blend"}
+  ],
+  "diesel": {
+    "isobutanol_pct": 0,
+    "note": "isobutanol blending is proposal-stage (10-15%); not implemented. Ethanol does not blend with diesel."
+  }
+}

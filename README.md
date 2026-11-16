@@ -6,9 +6,10 @@ Part of the [tco-india](https://github.com/tco-india) org. Data module is separa
 
 ## What it does
 
-- **Sources:** PPAC + IOCL + BPCL + HPCL (5 grades: `regular_e20`/`xp95`/`xp100`/`diesel`/`xtragreen`)
+- **Sources:** PPAC metro PDF + NDTV all-state pages (direct httpx, no Firecrawl)
 - **Schedule:** GitHub Actions `daily.yml` @ 01:30 UTC (~07:00 IST) + manual `workflow_dispatch`
-- **Output:** `fuel/fuel_prices.parquet` on HF with cols `state_name, state_code, city, fuel_type, price_inr, price_date, source`
+- **Output:** `fuel/fuel_prices.parquet` on HF with cols `state_name, state_code, city, fuel_type, price_inr, price_date, source, ethanol_pct, isobutanol_pct`
+- **Fuel types:** `petrol` (E20 today; ethanol_pct from policy timeline) + `diesel` (isobutanol_pct future)
 - **Tooling:** [Astral uv](https://docs.astral.sh/uv/) — `uv sync` + `uv run`
 
 ## Usage (uv)

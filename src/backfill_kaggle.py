@@ -87,7 +87,7 @@ def transform_csv(path: Path, fuel_hint: str | None):
                 else:
                     ft = None
                 price_key = None
-                for key in ("price", "price_inr", "value", "rate"):
+                for key in ("price", "price_inr", "price_inr_per_litre", "value", "rate"):
                     if key in r and r.get(key):
                         price_key = key
                         break
@@ -102,7 +102,7 @@ def transform_csv(path: Path, fuel_hint: str | None):
             # fuel hint mode (single-fuel csv)
             if fuel_hint and not (("petrol" in r and r.get("petrol")) or ("diesel" in r and r.get("diesel"))):
                 price_key = None
-                for key in ("price", "price_inr", "value", "rate"):
+                for key in ("price", "price_inr", "price_inr_per_litre", "value", "rate"):
                     if key in r and r.get(key):
                         price_key = key
                         break
